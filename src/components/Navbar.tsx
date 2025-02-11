@@ -74,7 +74,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <ul className={`${nav ? "fixed left-0 top-0 w-[70%] h-full border-r border-gray-900 bg-[#000300] ease-in-out duration-500 p-6" : "fixed left-[-100%] w-[70%] ease-in-out duration-500 top-0 h-full"}`}>
-        <h1 className="text-2xl font-bold text-[#00df9a] mb-6">BRITSOLS.</h1>
+        <h1 className="text-2xl font-bold text-[#00df9a]">BRITSOLS.</h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map((item) => (
