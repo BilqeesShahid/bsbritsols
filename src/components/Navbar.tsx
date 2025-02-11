@@ -42,8 +42,6 @@ const Navbar = () => {
 
   return (
     <div className="bg-black w-full flex flex-col md:flex-row justify-between items-center h-auto md:h-20 px-4 md:px-8 text-white border-b border-gray-700">
-
-
       <div className="flex justify-between w-full md:w-auto items-center">
         <h1 className="text-2xl font-bold text-[#00df9a]">BRITSOLS.</h1>
         <div onClick={() => setNav(!nav)} className="block md:hidden">
@@ -57,20 +55,25 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex">
-        {navItems.map((item) => (
-          <li key={item.id} className="p-3 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black flex items-center">
-            {item.icon}
-            <span className="ml-2">{item.text}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="hidden md:flex items-center">
+        <ul className="flex">
+          {navItems.map((item) => (
+            <li key={item.id} className="p-3 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black flex items-center">
+              {item.icon}
+              <span className="ml-2">{item.text}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Sign In Button (Desktop) */}
+        <button className="ml-4 px-4 py-2 bg-[#00df9a] text-black font-semibold rounded-lg hover:bg-green-400 transition duration-300">
+          Sign In
+        </button>
+      </div>
 
       {/* Mobile Navigation Menu */}
       <ul className={`${nav ? "fixed left-0 top-0 w-[70%] h-full border-r border-gray-900 bg-[#000300] ease-in-out duration-500" : "fixed left-[-100%] w-[70%] ease-in-out duration-500 top-0 h-full"}`}>
         <h1 className="text-2xl font-bold text-[#00df9a] m-4">BRITSOLS.</h1>
-
-         
 
         {/* Mobile Navigation Items */}
         {navItems.map((item) => (
@@ -79,6 +82,13 @@ const Navbar = () => {
             <span className="ml-2">{item.text}</span>
           </li>
         ))}
+
+        {/* Sign In Button (Mobile) */}
+        <div className="text-center mt-4">
+          <button className="px-4 py-2 bg-[#00df9a] text-black font-semibold rounded-lg hover:bg-green-400 transition duration-300">
+            Sign In
+          </button>
+        </div>
       </ul>
     </div>
   );
